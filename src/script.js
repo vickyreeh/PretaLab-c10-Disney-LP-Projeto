@@ -26,15 +26,20 @@ function jogoDeAdivinhacao() {
 
     function jogoDeAdivinhacao( ){
         const palpiteDigitado = Pegarpalpitedigitado()
+        
         if(!palpiteDigitado){
             alert("Por favor, Digite um valor válido!")} 
         if (palpiteDigitado === numeroAleatorio){
-            alert("Parabéns, você advinhou !!")
+            alert("Parabéns, você advinhou !!");
         } else if (palpiteDigitado > numeroAleatorio){
-            atualizarFeedback("Este numero é muito alto, tente novamente :(")
+            tentativas++;
+            atualizarFeedback("Este numero é muito alto, tente novamente :(");
         } else (palpiteDigitado < numeroAleatorio){
-            atualizarFeedback("Estee numero é muito baixo, tente nomavemente :(")}
-
+            tentativas++;
+            atualizarFeedback("Estee numero é muito baixo, tente nomavemente :(");
+        }
+        const novaPontuacao = 100 - (tentativas * 10);
+        atualizarPontuacao(novaPontuacao);    
     }
 
 

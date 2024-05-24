@@ -21,16 +21,19 @@ function jogoDeAdivinhacao() {
 
     // to-do
 
-    let numeroAleatorio = 0;
+    let numeroAleatorio = Math.floor(Math.random()+1);
     let tentativas = 0;
 
     function jogoDeAdivinhacao( ){
         const palpiteDigitado = Pegarpalpitedigitado()
         
         if(!palpiteDigitado){
-            alert("Por favor, Digite um valor válido!")} 
+            alert("Por favor, Digite um valor válido!");
+            return;} 
         if (palpiteDigitado === numeroAleatorio){
             alert("Parabéns, você advinhou !!");
+            reiniciarJogo;
+            return;
         } else if (palpiteDigitado > numeroAleatorio){
             tentativas++;
             atualizarFeedback("Este numero é muito alto, tente novamente :(");
@@ -52,4 +55,12 @@ function jogoDeAdivinhacao() {
 
 function reiniciarJogo() {
     // to-do
+    const vaiReiniciar = confirm("Deseja jogar novamente?");
+
+    if(vaiReiniciar === true){
+        atualizarPalpitesFalhos("");
+        atualizarPontuacao(100);
+        atualizarFeedback("");
+        limparPalpiteDigitado();
+    }
 }

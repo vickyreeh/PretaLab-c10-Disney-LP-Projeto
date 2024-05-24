@@ -47,6 +47,12 @@ function jogoDeAdivinhacao() {
         const = palpitesFalhos = pegarPalpitesFalhos;
         const = novosPalpitesFalhos = palpitesFalhos+ " " + palpiteDigitado;
         atualizarPalpitesFalhos(novosPalpitesFalhos);
+
+        const pontuacaoAtual = pegarPontuacao;
+        if(pontuacaoAtual === "Você tem 0 pontos"){
+            alert("Deu ruim, boy! Dê seus pulos");
+            reiniciarJogo();
+        }
     }
 
 

@@ -36,10 +36,14 @@ function jogoDeAdivinhacao() {
             atualizarFeedback("Este numero é muito alto, tente novamente :(");
         } else (palpiteDigitado < numeroAleatorio){
             tentativas++;
-            atualizarFeedback("Estee numero é muito baixo, tente nomavemente :(");
+            atualizarFeedback("Este numero é muito baixo, tente nomavemente :(");
         }
         const novaPontuacao = 100 - (tentativas * 10);
         atualizarPontuacao(novaPontuacao);    
+
+        const = palpitesFalhos = pegarPalpitesFalhos;
+        const = novosPalpitesFalhos = palpitesFalhos+ " " + palpiteDigitado;
+        atualizarPalpitesFalhos(novosPalpitesFalhos);
     }
 
 

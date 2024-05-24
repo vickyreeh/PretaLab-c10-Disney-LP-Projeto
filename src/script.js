@@ -20,6 +20,18 @@ function jogoDeAdivinhacao() {
 
 
     // to-do
+
+    let numeroAleatorio = 0;
+    let tentativas = 0;
+
+    function jogoDeAdivinhacao( ){
+        const palpiteDigitado = Pegarpalpitedigitado()
+        if(!palpiteDigitado)
+            alert("Por favor, Digite um valor válido!")
+    }
+
+
+
 }
 
 function reiniciarJogo() {

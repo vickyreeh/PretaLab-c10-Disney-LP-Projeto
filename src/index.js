@@ -17,7 +17,6 @@ function atualizarFeedback(msg) {
 
 function pegarPalpitesFalhos() {
   return document.getElementById("palpitesFalhos").textContent;
-
 }
 
 function atualizarPalpitesFalhos(novoValor) {

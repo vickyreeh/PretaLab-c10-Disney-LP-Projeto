@@ -49,5 +49,6 @@ function reiniciarJogo() {
         atualizarPontuacao(100);
         atualizarFeedback("");
         limparPalpiteDigitado();
+        return;
     }
 }

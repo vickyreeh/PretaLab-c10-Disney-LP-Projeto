@@ -1,29 +1,35 @@
-let numeroAleatorio = 10;
-//let numeroAleatorio = Math.floor(Math.random()+1);
+//let numeroAleatorio = 10;
+let numeroAleatorio = Math.floor(Math.random()+1);
 let tentativas = 0;
 
 function jogoDeAdivinhacao() {
       const palpiteDigitado = pegarPalpiteDigitado();
+      const palpitesFalhos = pegarPalpitesFalhos();
     
-    if(!palpiteDigitado){
-        alert("Por favor, Digite um valor válido!");
+    if(!palpiteDigitado || palpiteDigitado < 1 || palpiteDigitado > 100){
+        alert("Por favor, Digite um valor válido, entre 1 e 100!");
         return;
-    } 
-    if (palpiteDigitado === numeroAleatorio){
+    } else if (palpiteDigitado === numeroAleatorio){
         alert("Parabéns, você advinhou !!");
         reiniciarJogo();
         return;
-    } else if (palpiteDigitado > numeroAleatorio){
+    } 
+    if (palpiteDigitado > numeroAleatorio && !palpitesFalhos.includes(palpiteDigitado)){
         tentativas++;
         atualizarFeedback("Este numero é muito alto, tente novamente :(");
-    } else if(palpiteDigitado < numeroAleatorio){
+    } else if(palpiteDigitado < numeroAleatorio && !palpitesFalhos.includes(palpiteDigitado)){
         tentativas++;
         atualizarFeedback("Este numero é muito baixo, tente nomavemente :(");
-    }
+    } else if(palpitesFalhos.includes(palpiteDigitado)){
+        alert("Ops, esse numero já foi!"); 
+        return;
+    } 
+
+
     const novaPontuacao = 100 - (tentativas * 10);
     atualizarPontuacao(novaPontuacao);  
 
-    const palpitesFalhos = pegarPalpitesFalhos();
+    
     const novosPalpitesFalhos = palpitesFalhos+ " " + palpiteDigitado;
     atualizarPalpitesFalhos(novosPalpitesFalhos);
 

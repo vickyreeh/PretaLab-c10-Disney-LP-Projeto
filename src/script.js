@@ -3,6 +3,8 @@ let numeroAleatorio = Math.floor(Math.random()*100)+1;
 let tentativas = 0;
 
 function jogoDeAdivinhacao() {
+
+
       const palpiteDigitado = pegarPalpiteDigitado();
       const palpitesFalhos = pegarPalpitesFalhos();
     
@@ -10,7 +12,7 @@ function jogoDeAdivinhacao() {
         alert("Por favor, Digite um valor válido, entre 1 e 100!");
         return;
     } else if (palpiteDigitado === numeroAleatorio){
-        alert("Parabéns, você advinhou !!");
+        alert("Parabéns, você adivinhou!!");
         reiniciarJogo();
         return;
     } 
@@ -24,7 +26,6 @@ function jogoDeAdivinhacao() {
         alert("Ops, esse numero já foi!"); 
         return;
     } 
-
 
     const novaPontuacao = 100 - (tentativas * 10);
     atualizarPontuacao(novaPontuacao);  

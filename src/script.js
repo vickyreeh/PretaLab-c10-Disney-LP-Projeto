@@ -1,5 +1,5 @@
 //let numeroAleatorio = 10;
-let numeroAleatorio = Math.floor(Math.random()+1);
+let numeroAleatorio = Math.floor(Math.random()*100)+1;
 let tentativas = 0;
 
 function jogoDeAdivinhacao() {
